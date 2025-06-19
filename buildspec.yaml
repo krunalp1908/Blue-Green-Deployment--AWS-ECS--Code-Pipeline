@@ -46,11 +46,11 @@ phases:
       - echo "Build completed successfully!"
       - echo "Running SonarQube analysis result"
       - sonar-scanner -Dsonar.projectKey=swiggy -Dsonar.sources=. -Dsonar.host.url=https://7ce4-103-39-128-15.ngrok-free.app
-      - |
-        aws ses send-email --from "estriker6@gmail.com" --to "krunalparekh654@gmail.com" --subject "CodeBuild Status: $CODEBUILD_BUILD_ID" --text "Build status: $CODEBUILD_BUILD_STATUS" --region "us-east-1"
 
 
 
 artifacts:
   files:
     - appspec.yaml
+    - trivyfilescan.txt
+    - trivyimage.txt
